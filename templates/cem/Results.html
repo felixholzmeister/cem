@@ -1,5 +1,5 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree_tags %}
+{% load staticfiles otree %}
 {% load i18n %}
 
 
@@ -26,18 +26,19 @@
 
     <div class="wrapper">
 
-        <div class="panel panel-default info">
+        <div class="card info">
             {% blocktrans trimmed %}
                 The following decision was randomly chosen for your payment:
             {% endblocktrans %}
         </div>
+        <br/>
 
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Table - Lottery Decisions (Accept/Reject) -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% if Constants.accept_reject == True and Constants.variation != 'sure_payoff' %}
 
-            <div class="panel panel-default">
+            <div class="card">
                 <table class="table table-striped">
                     <thead>
                         <tr class="header">
@@ -92,7 +93,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% else %}
 
-            <div class="panel panel-default">
+            <div class="card">
                 <table class="table table-striped">
                     <thead>
                         <tr class="header">
@@ -138,12 +139,12 @@
             </div>
 
         {% endif %}
-
+        <br/>
 
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Payoff Information -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
-        <div class="panel panel-default info">
+        <div class="card info">
 
             {% if Constants.accept_reject == True and Constants.variation != 'sure_payoff' %}
                 <p>

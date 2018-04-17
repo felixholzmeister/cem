@@ -12,14 +12,14 @@ h2 {
     border-bottom: none;
 }
 
-.next-button {
+.otree-btn-next {
     margin: 40px auto;
     display: inherit;
 }
 
 .wrapper, .alert {
     min-width: 500px;
-    max-width: 600px;
+    max-width: 660px;
     margin: 0 auto 20px;
 }
 
@@ -55,8 +55,13 @@ h2 {
     border: none;
 }
 
+.table {
+    margin-bottom: 0;
+}
+
 .header {
-    background-color: #f1f1f1;
+    background-color: #d1d1d1;
+
 }
 
 .formfield {

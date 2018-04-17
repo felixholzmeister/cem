@@ -1,5 +1,5 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree_tags %}
+{% load staticfiles otree %}
 {% load i18n %}
 
 
@@ -60,7 +60,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% if Constants.accept_reject == True and Constants.variation != 'sure_payoff' %}
 
-            <div class="panel panel-default">
+            <div class="card">
                 <table class="table table-striped">
                     <thead>
                         <tr class="header">
@@ -100,7 +100,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% else %}
 
-            <div class="panel panel-default">
+            <div class="card">
                 <table class="table table-striped">
                     <thead>
                         <tr class="header">

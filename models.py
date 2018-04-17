@@ -22,7 +22,7 @@ class Subsession(BaseSubsession):
 
     # initiate lists before session starts in round 1
     # ----------------------------------------------------------------------------------------------------------------
-    def before_session_starts(self):
+    def creating_session(self):
         if self.round_number == 1:
 
             n = Constants.num_choices
@@ -112,12 +112,12 @@ class Player(BasePlayer):
     # add model fields to class player
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     for j in range(1, Constants.num_choices + 1):
-        locals()['choice_' + str(j)] = models.CharField()
+        locals()['choice_' + str(j)] = models.StringField()
     del j
 
     random_draw = models.IntegerField()
-    choice_to_pay = models.CharField()
-    option_to_pay = models.CharField()
+    choice_to_pay = models.StringField()
+    option_to_pay = models.StringField()
     inconsistent = models.IntegerField()
     switching_row = models.IntegerField()
 
@@ -129,7 +129,7 @@ class Player(BasePlayer):
         # ------------------------------------------------------------------------------------------------------------
         self.random_draw = randrange(1, 100)
 
-        # set <choice_to_pay> to participant.var['choice_to_pay'] determined before_session_starts
+        # set <choice_to_pay> to participant.var['choice_to_pay'] determined creating_session
         # ------------------------------------------------------------------------------------------------------------
         self.choice_to_pay = self.participant.vars['cem_choice_to_pay']
 
